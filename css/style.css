@@ -99,7 +99,8 @@ a { color: var(--red); }
 .menu-tab[aria-selected="true"] { background: var(--red); border-color: var(--red); color: #fff; }
 .menu-panel { display: grid; gap: 1.25rem; margin-top: 1.25rem; }
 /* Tab-change transitions (see swap() in main.js) */
-.menu-panel { transition: opacity .16s ease, transform .16s ease; }
+.menu-panel { transition: opacity .16s ease, transform .16s ease, height .45s cubic-bezier(.2, .7, .2, 1); }
+.menu-panel.is-swapping { overflow: hidden; } /* only while animating, so nothing spills out as the height changes */
 .menu-panel.is-leaving { opacity: 0; transform: translateY(6px); }
 .menu-photos img { opacity: 0; transition: opacity .5s ease; }
 .menu-photos img.is-loaded { opacity: 1; }

@@ -168,15 +168,34 @@
   function swap(cat) {
     clearTimeout(swapTimer);
     const motionOk = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (firstRender || !motionOk) { firstRender = false; renderPanel(cat); return; }
-    panel.style.minHeight = panel.offsetHeight + "px"; // hold the height so the page doesn't jump
+    if (firstRender || !motionOk) {
+      firstRender = false;
+      panel.classList.remove("is-leaving", "is-entering", "is-swapping");
+      panel.style.height = "";
+      renderPanel(cat);
+      return;
+    }
+    // 1. Pin the current height and fade the old menu out.
+    const from = panel.offsetHeight;
+    panel.classList.add("is-swapping");
+    panel.style.height = from + "px";
     panel.classList.remove("is-entering");
     panel.classList.add("is-leaving");
     swapTimer = setTimeout(() => {
+      // 2. Swap the content and measure how tall the new menu naturally is.
       renderPanel(cat);
+      panel.style.height = "auto";
+      const to = panel.offsetHeight;
+      panel.style.height = from + "px";
+      void panel.offsetHeight; // force a reflow so the browser starts the animation from the old height
+      // 3. Glide the height to the new size while the new cards rise in, so everything below moves smoothly.
       panel.classList.remove("is-leaving");
       panel.classList.add("is-entering");
-      swapTimer = setTimeout(() => { panel.classList.remove("is-entering"); panel.style.minHeight = ""; }, 700);
+      panel.style.height = to + "px";
+      swapTimer = setTimeout(() => {
+        panel.classList.remove("is-entering", "is-swapping");
+        panel.style.height = "";
+      }, 560);
     }, 160);
   }
 
