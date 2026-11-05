@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-GH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atomic Grill | Grilled Chicken, Jollof, Shawarma in Accra</title>
+  <meta name="description" content="Atomic Grill in Accra, Ghana: grilled chicken, jollof and fried rice, shawarma, loaded fries and fresh juices. Delivery, pickup and dine-in. Order on WhatsApp.">
+  <meta name="theme-color" content="#1b1b1b">
+  <!-- REPLACE https://YOUR-DOMAIN/ below (3 places) once you have your address -->
+  <link rel="canonical" href="https://YOUR-DOMAIN/">
+  <meta property="og:type" content="restaurant.restaurant">
+  <meta property="og:title" content="Atomic Grill | Meet me at Atomic">
+  <meta property="og:description" content="Grilled chicken, jollof, shawarma and more. Delivery, pickup and dine-in in Accra. Order on WhatsApp.">
+  <meta property="og:url" content="https://YOUR-DOMAIN/">
+  <meta property="og:image" content="https://YOUR-DOMAIN/images/hero-chicken-1600.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preload" href="fonts/oswald-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Structured data for Google. TODO: add "address" and "sameAs" once the street address is confirmed. -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Restaurant","name":"Atomic Grill","slogan":"Meet me at Atomic",
+   "telephone":"+233539592487","servesCuisine":["Grilled chicken","Ghanaian","Shawarma"],"priceRange":"GH₵5 - GH₵180",
+   "image":"https://YOUR-DOMAIN/images/hero-chicken-1600.webp","hasMenu":"https://YOUR-DOMAIN/#menu","areaServed":"Accra, Ghana"}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#menu">Skip to the menu</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top" aria-label="Atomic Grill, back to top">
+        <img src="images/logo.png" width="44" height="44" alt=""> <span>Atomic Grill</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#menu">Menu</a>
+        <a href="#visit">Find us</a>
+      </nav>
+      <a class="btn-atomic" data-call href="tel:+233539592487">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+        Call
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__slider" id="hero-slider" role="region" aria-roledescription="carousel" aria-label="Featured meals">
+        <div class="hero__slides" id="hero-slides">
+          <img class="hero__slide is-active" src="images/hero-chicken-800.webp"
+               srcset="images/hero-chicken-800.webp 800w, images/hero-chicken-1600.webp 1600w" sizes="100vw"
+               width="1600" height="900" alt="Half grilled chicken on a plate with lemon, tomato and salad" fetchpriority="high">
+        </div>
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="hero__bar">
+          <p class="hero__caption" id="hero-caption"><span class="hero__caption-title" id="hero-cap-title"></span> <strong id="hero-cap-price"></strong></p>
+          <div class="hero__controls">
+            <button type="button" class="hero__ctl" id="hero-prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <div class="hero__dots" id="hero-dots" role="group" aria-label="Choose a slide"></div>
+            <button type="button" class="hero__ctl" id="hero-next" aria-label="Next slide"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            <button type="button" class="hero__ctl hero__ctl--text" id="hero-toggle" aria-label="Pause slideshow" aria-pressed="false"><span>Pause</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="hero__kicker">Grilling is our thing</p>
+          <h1 id="hero-title">Meet me at <span>Atomic</span></h1>
+          <p class="hero__lead">Flame-grilled chicken, jollof, shawarma and loaded fries, made fresh in Accra.</p>
+          <div class="hero__actions">
+            <a class="btn-atomic" data-wa href="https://wa.me/233539592487">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
+              Order on WhatsApp
+            </a>
+            <a class="btn-atomic btn-atomic--light" data-call href="tel:+233539592487">Call 053 959 2487</a>
+          </div>
+          <ul class="how" aria-label="Ways to order">
+            <li>Delivery</li><li>Pickup</li><li>Dine-in</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <h2 class="menu__title" id="menu-title">Our menu</h2>
+        <p class="menu__sub">All prices in Ghana cedis (GH₵). Tap a category to see what's inside.</p>
+        <div class="menu-tabs-wrap">
+          <div class="menu-tabs" id="menu-tabs" role="tablist" aria-label="Menu categories"></div>
+        </div>
+        <div class="menu-panel" id="menu-panel" role="tabpanel" tabindex="0">
+          <noscript><p>The menu needs JavaScript to display. Please call <a href="tel:+233539592487">053 959 2487</a> or message us on <a href="https://wa.me/233539592487">WhatsApp</a>.</p></noscript>
+        </div>
+        <div class="menu-cta">
+          <p><strong>Ready to eat?</strong> Send your order on WhatsApp. Delivery fees depend on your location, so message us to confirm.</p>
+          <a class="btn-atomic" data-wa href="https://wa.me/233539592487">Order on WhatsApp</a>
+          <a class="btn-atomic btn-atomic--light" data-link="bolt" hidden>Order on Bolt Food</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visit" aria-labelledby="visit-title">
+      <div class="container">
+        <h2 id="visit-title">Find us</h2>
+        <div class="row g-4">
+          <div class="col-md-5">
+            <h3>Opening hours</h3>
+            <table class="hours">
+              <caption class="visually-hidden-text">Opening hours</caption>
+              <tbody>
+                <tr><th scope="row">Monday</th><td>10:00 - 00:00</td></tr>
+                <tr class="is-closed"><th scope="row">Tuesday</th><td>Closed</td></tr>
+                <tr><th scope="row">Wednesday</th><td>10:00 - 00:00</td></tr>
+                <tr><th scope="row">Thursday</th><td>10:00 - 00:00</td></tr>
+                <tr><th scope="row">Friday</th><td>10:00 - 00:30</td></tr>
+                <tr><th scope="row">Saturday</th><td>10:00 - 00:30</td></tr>
+                <tr><th scope="row">Sunday</th><td>12:00 - 00:00</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-7">
+            <h3>Address</h3>
+            <div class="map-card">
+              <!-- REPLACE the address line below with the real street address -->
+              <p><strong>Atomic Grill</strong><br>[Atomic Junction Roundabout, Accra]</p>
+              <a class="btn-atomic btn-atomic--dark" data-map href="https://maps.app.goo.gl/pUr58PrL6SsVXY5Z9" target="_blank" rel="noopener">Get directions on Google Maps</a>
+              <a class="btn-atomic btn-atomic--dark" data-call href="tel:+233539592487">Call 053 959 2487</a>
+            </div>
+            <!-- OPTIONAL live map: Google Maps > Share > Embed a map > copy the src="..." link, then
+                 uncomment this and paste it in:
+            <iframe class="map-embed mt-3" title="Atomic Grill on Google Maps" src="PASTE-EMBED-LINK-HERE" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe> -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <ul class="socials" aria-label="Social media">
+        <li><a data-link="instagram" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a data-link="tiktok" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a data-link="facebook" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+      <p class="mb-1">Atomic Grill, Accra, Ghana. Good food. Good mood. Always Atomic!</p>
+      <p class="mb-0 small">&copy; <span data-year>2026</span> Atomic Grill. Prices in GH₵ and may change.</p>
+    </div>
+  </footer>
+
+  <div class="action-bar" role="region" aria-label="Quick order">
+    <a class="btn-atomic btn-atomic--light" data-call href="tel:+233539592487">Call</a>
+    <a class="btn-atomic" data-wa href="https://wa.me/233539592487">WhatsApp</a>
+  </div>
+
+  <script src="js/menu-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

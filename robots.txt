@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# REPLACE YOUR-DOMAIN, then uncomment:
+# Sitemap: https://YOUR-DOMAIN/sitemap.xml
