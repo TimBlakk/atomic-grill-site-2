@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 # REPLACE YOUR-DOMAIN, then uncomment:
-# Sitemap: https://YOUR-DOMAIN/sitemap.xml
+# Sitemap: https://timblakk.github.io/atomic-grill-site-2/sitemap.xml
