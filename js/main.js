@@ -136,12 +136,16 @@
       img.width = 800; img.height = 600;       // reserves space, stops layout jump
       img.loading = i === 0 ? "eager" : "lazy";
       img.decoding = "async";
+      const shown = () => img.classList.add("is-loaded"); // photos fade in once they have loaded
+      img.addEventListener("load", shown); img.addEventListener("error", shown);
       photos.append(img);
+      if (img.complete) shown();
     });
 
     const lists = el("div", "menu-lists");
-    cat.sections.forEach(sec => {
+    cat.sections.forEach((sec, idx) => {
       const s = el("section", "menu-section");
+      s.style.setProperty("--i", idx); // delays each card slightly so they appear one after another
       s.append(el("h3", "menu-section__title", sec.title));
       if (sec.note) s.append(el("p", "menu-section__note", sec.note));
       const ul = el("ul", "menu-items");
@@ -158,13 +162,31 @@
     panel.append(photos, lists);
   }
 
+  // Smooth tab change: fade the old menu out, swap it, then let the new cards rise in.
+  // Skipped on first load and for people who have "reduce motion" switched on.
+  let swapTimer = null, firstRender = true;
+  function swap(cat) {
+    clearTimeout(swapTimer);
+    const motionOk = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (firstRender || !motionOk) { firstRender = false; renderPanel(cat); return; }
+    panel.style.minHeight = panel.offsetHeight + "px"; // hold the height so the page doesn't jump
+    panel.classList.remove("is-entering");
+    panel.classList.add("is-leaving");
+    swapTimer = setTimeout(() => {
+      renderPanel(cat);
+      panel.classList.remove("is-leaving");
+      panel.classList.add("is-entering");
+      swapTimer = setTimeout(() => { panel.classList.remove("is-entering"); panel.style.minHeight = ""; }, 700);
+    }, 160);
+  }
+
   function select(i, scroll) {
     tabs.forEach((t, n) => {
       const on = n === i;
       t.setAttribute("aria-selected", on);
       t.tabIndex = on ? 0 : -1;
     });
-    renderPanel(MENU[i]);
+    swap(MENU[i]);
     tabs[i].scrollIntoView({ inline: "center", block: "nearest" }); // keep active tab visible in the scroll row
     if (scroll) {
       const top = $("#menu").getBoundingClientRect().top + window.scrollY - 8;
